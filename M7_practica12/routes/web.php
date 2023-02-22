@@ -15,7 +15,7 @@ use App\Http\Controllers\Admin\ControladorAdmin;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 /*
 Route::prefix("adb")->group(function() {

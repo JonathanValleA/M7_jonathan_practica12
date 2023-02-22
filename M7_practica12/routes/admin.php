@@ -16,9 +16,9 @@ use App\Http\Controllers\Admin\ControladorAdmin;
 // Agrupar las rutas del administrador utilizando el middleware adb
 Route::group(['middleware' => ['adb']], function(){
     // Ruta para mostrar la página de clientes
-    Route::get('/clientes', [ControladorAdmin::class, 'clientes']);
+    Route::get('/clientes', [ControladorAdmin::class, 'clientes'])->name('admin.clientes');
     // Ruta para mostrar la página de facturación
-    Route::get('/facturacion', [ControladorAdmin::class, 'facturacion']);
+    Route::get('/facturacion', [ControladorAdmin::class, 'facturacion'])->name('admin.facturacion');
     // Ruta para mostrar la página de contabilidad
-    Route::get('/contabilidad', [ControladorAdmin::class, 'contabilidad']);
+    Route::get('/contabilidad', [ControladorAdmin::class, 'contabilidad'])->name('admin.contabilidad');
 });
