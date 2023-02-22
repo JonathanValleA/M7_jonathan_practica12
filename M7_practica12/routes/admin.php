@@ -13,13 +13,12 @@ use App\Http\Controllers\Admin\ControladorAdmin;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-/*
-Route::prefix("adb")->group(function() {
+// Agrupar las rutas del administrador utilizando el middleware adb
+Route::group(['middleware' => ['adb']], function(){
+    // Ruta para mostrar la página de clientes
     Route::get('/clientes', [ControladorAdmin::class, 'clientes']);
+    // Ruta para mostrar la página de facturación
     Route::get('/facturacion', [ControladorAdmin::class, 'facturacion']);
+    // Ruta para mostrar la página de contabilidad
     Route::get('/contabilidad', [ControladorAdmin::class, 'contabilidad']);
-});*/
+});

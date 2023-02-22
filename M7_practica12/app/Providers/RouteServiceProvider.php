@@ -33,6 +33,12 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+
+            // Rutas para el administrador definidas en el archivo routes/admin.php
+            Route::middleware('adb')
+                ->prefix('adb')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/admin.php'));
         });
     }
 
